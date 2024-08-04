@@ -1,0 +1,99 @@
+<%-include('./partials/header.ejs')%>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 mt-5">
+                <h2 class="alert alert-success text-center">Add new Product</h2>
+                <form method="post" accept="/adminPanel" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="title" name="title" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="file" class="form-label">File</label>
+                        <input type="file" class="form-control" id="file" name="fileName" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="category" class="form-label">Category</label>
+                        <input type="text" class="form-control" id="category" name="category" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="description" name="description" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="text" class="form-control" id="price" name="price" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+            <div class="col-sm-8 mt-5">
+                <h2 class="alert alert-danger text-center">List of Product</h2>
+                <!-- ⬇️this is comment in ejs -->
+                <%# Show All data %>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">File</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% var i=1 %>
+                                <% data.forEach((item)=>{ %>
+                                    <tr class="">
+                                        <td>
+                                            <%= i++ %>
+                                        </td>
+                                        <td>
+                                            <%= item.title %>
+                                        </td>
+                                        <td>
+                                            <%= item.file %> <!-- ⬅️ it will fetch the name of image from mongodb -->
+                                            <!-- or it will fetch the image from uploads folder -->                                            
+                                                <img src="/uploads/<%= item.file %>" alt="img"
+                                                style="border-radius: 6px; width: 60px; padding: 5px; border: 
+                                                1px solid rgb(51, 47, 47);">
+                                        </td>
+                                        <td>
+                                            <%= item.category %>
+                                        </td>
+                                        <td>
+                                            <%= item.description %>
+                                        </td>
+                                        <td>
+                                            <%= item.price %>
+                                        </td>
+                                        <td>
+                                            <form action="/edit/<%= item._id %>" method="get" class="d-inline">
+                                                <button type="submit" class="btn">
+                                                    <i class="fas fa-pen-square text-info"></i>
+                                                </button>
+                                            </form>
+
+                                            <form action="/delete/<%= item._id %>" method="post" class="d-inline">
+                                                <button type="submit" class="btn">
+                                                    <i class="fas fa-trash text-danger"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+
+                                    </tr>
+                                    <% })%>
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+
+    <%-include('./partials/footer.ejs')%>

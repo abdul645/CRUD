@@ -1,0 +1,37 @@
+S<%-include('./partials/header.ejs')%>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 mt-5">
+            <h2 class="alert alert-success text-center">Update Student</h2>
+            <form method="post" action="/update/<%= data._id %>">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" value="<%= data.title %>" />
+                </div>
+                <div class="mb-3">
+                    <label for="file" class="form-label">File</label>
+                    <input type="text" class="form-control" id="file" name="file" value="<%= data.file %>"  />
+                </div>
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <input type="text" class="form-control" id="category" name="category" value="<%= data.category %>"  />
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="description" name="description"  value="<%= data.description %>" />
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="text" class="form-control" id="price" name="price" value="<%= data.price %>"  />
+                </div>
+                <button type="submit" class="btn btn-warning">Update</button>
+                <button type="submit" class="btn btn-secondary">Back</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+    <%-include('./partials/footer.ejs')%>
+
+

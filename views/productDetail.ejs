@@ -1,0 +1,50 @@
+<%- include('./partials/header.ejs') %>
+
+    <div class="container m-auto">
+        <div class="m-4 mainWindow shadow bg-white-rounded p-1">
+
+            <div class="d-flex flex-row flex-no-wrap bg-1">
+
+                    <div class="flex-grow-1 m-2">
+                        <img style="width: 400px; height: 400px; border-radius: 4px; object-fit: contain;" class="product-img p-2" src="/uploads/<%= detailData.file %>">
+                    </div>
+                    <div class="flex-grow-1 m-2 p-1">
+                        <div class="d-flex flex-column">
+                            <div class="desc p-1">
+                                <h4>
+                                    <%= detailData.title %>
+                                     
+                                </h4>
+                                <h4>Price : ₹ <%= detailData.price %>
+                                    
+                                </h4>
+                            </div>
+                            <div class="seller-name p-1">
+                                <small>
+                                    <%= detailData.category %>
+                                    
+                                </small>
+                            </div>
+                            <div class="item-desc">
+                                <%= detailData.description %>
+                                
+                            </div>
+                            <div class="btn-group sizes mt-3 mb-2 pr-1">
+                                <button type="button" class="btn btn-xs btn-outline-primary">S</button>
+                                <button type="button" class="btn btn-xs btn-outline-primary">M</button>
+                                <button type="button" class="btn btn-xs btn-outline-primary">L</button>
+                            </div>
+                            <div class="sizes mt-1 pr-1">
+                                <button type="button" class="btn btn-xs mb-1 btn-warning">Add btn</button>
+                                <button type="button" class="btn btn-xs mb-1 btn-primary">Wishlist btn</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>

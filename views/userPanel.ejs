@@ -1,0 +1,39 @@
+<%-include('./partials/header.ejs')%>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-5">
+                <h2 class="alert alert-danger text-center">All Products</h2>
+                <div class=" d-flex flex-wrap justify-content-center">
+                    <% data.forEach((item)=>{ %>
+                        <div class="card m-2" style="width: 22rem; box-shadow: 0 0 20px gray;">
+                            <a href="/productDetails/<%= item._id %>" style=" text-decoration: none;">
+                                <img src="/uploads/<%= item.file %>" style="width: 100%; object-fit: contain; height: 200px;" class="card-img-top" alt="<%= item.file %>">
+                            </a>
+                            <div class="card-body">
+                                <a href="/productDetails/<%= item._id %>" style=" text-decoration: none;">
+                                    <h5 class="card-title">
+                                        <%= item.title %>
+                                    </h5>
+                                </a>
+                                <p class="card-text">
+                                    <%= item.category %>
+                                </p>
+                                <p class="card-text">
+                                    <%= item.description %>
+                                </p>
+                                <h5 class="card-title my-4 fs-4">
+                                    Price : ₹ <%= item.price %>
+                                </h5>
+                                <a href="#" class="btn btn-primary w-100">Add To Cart</a>
+                            </div>
+                        </div>
+                        <% })%>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <%-include('./partials/footer.ejs')%>

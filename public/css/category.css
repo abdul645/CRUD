@@ -1,0 +1,55 @@
+
+/* driver signin popup code start */
+
+.overlay{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0%;
+    position: fixed;
+    z-index: 1;
+    opacity: 1;
+}
+.active-overlay{
+    z-index: 1;
+    opacity: 1;
+}
+.wrapper{
+    width: 30vw;
+    height: 70vh;
+    background-color: white;
+    margin: 7% 0 0 35%;
+    z-index: 99;
+    position: relative;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgb(0, 0, 0, 0.5);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* transition: transform .7s ,height .2s; */
+} 
+
+
+.form-box h2{
+    font-size: 2.5rem;
+    color: #162938;
+    text-align: center;
+}
+.buttons{
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    
+}
+.adminBtn, .userBtn{
+    width: 100%;
+    margin: 20px 0px;
+    font-size: 2rem;
+    padding: 15px;
+    border-radius: 10px;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+}
