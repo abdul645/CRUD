@@ -20,7 +20,7 @@ const adminSignupController = async (req, res) => {
        
         // Save the data to the database
         const result = await doc.save();
-         res.redirect('/Dashboard');
+         res.redirect('/adminPanel');
         // res.render('home', {'title': "Signup for driver"})
 
         // console.log("succesfully created", result);
