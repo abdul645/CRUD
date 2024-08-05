@@ -1,0 +1,1 @@
+Developed a web application with a basic user interface focused on providing CRUD (Create, Read, Update, Delete) functionality. This application aims to efficiently manage and manipulate data through these core operations, ensuring a seamless user experience.
