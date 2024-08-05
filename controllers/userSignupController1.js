@@ -19,10 +19,7 @@ const userSignupController1 = async (req, res) => {
        
         // Save the data to the database
         const result = await doc.save();
-         res.redirect('/userPanel');
-
-        res.status(200).json({ message: 'Successfully created', data: result });
-       
+        res.redirect('/userPanel');       
     } catch (error) {
         console.error('Error creating user:', error);
         res.status(500).json({ error: 'Internal Server Error' });
