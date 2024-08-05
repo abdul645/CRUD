@@ -1,7 +1,7 @@
 
 
 const userSignupController = (req, res) =>{
-    res.render('userSignup', {title: 'singup'})
+    res.render('UserSignup', {title: 'singup'})
 }
 
 
