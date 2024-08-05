@@ -38,8 +38,8 @@ router.get('/', categoryController)
 router.get('/userLogin', userLoginFormController)
 router.post('/userLogin', userLoginController)
 
-router.get('/userSignup', userSignupController)
-router.post('/userSignup', userSignupController1)
+router.get('/UserSignup', userSignupController)
+router.post('/UserSignup', userSignupController1)
 
 router.get('/adminLogin', adminLoginFormController)
 router.post('/adminLogin', adminLoginController)
